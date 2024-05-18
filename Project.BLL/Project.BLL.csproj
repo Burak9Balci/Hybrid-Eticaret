@@ -6,4 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+	  <ProjectReference Include="..\Project.DAL\Project.DAL.csproj">
+		  <PrivateAssets>All</PrivateAssets>
+	  </ProjectReference>
+</ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Managers\" />
+    <Folder Include="ServiceInjections\" />
+  </ItemGroup>
+
 </Project>
