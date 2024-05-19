@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Project.DAL.Extentions
 {
-    public static class AppUserRoleDataSeedExtention
+    public static class AppRoleDataSeedExtention
     {
-        public static void AppRoloSeed(ModelBuilder modelBuilder)
+        public static void SeedAppRole(ModelBuilder modelBuilder)
         {
             AppRole role1 = new()
             {

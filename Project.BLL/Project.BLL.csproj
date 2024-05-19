@@ -7,9 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-	  <ProjectReference Include="..\Project.DAL\Project.DAL.csproj">
-		  <PrivateAssets>All</PrivateAssets>
-	  </ProjectReference>
-</ItemGroup>
+    <ProjectReference Include="..\Project.DAL\Project.DAL.csproj" />
+  </ItemGroup>
 
 </Project>

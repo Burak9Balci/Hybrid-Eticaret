@@ -30,7 +30,7 @@ namespace Project.DAL.ContextClasses
             builder.ApplyConfiguration(new AppRoleConfiguration());
             builder.ApplyConfiguration(new UserProfileConfiguration());
             builder.ApplyConfiguration(new AppUserRoleConfiguration());
-            AppUserRoleDataSeedExtention.AppRoloSeed(builder);
+            AppRoleDataSeedExtention.SeedAppRole(builder);
             CategoryDataSeedExtention.SeedCategories(builder);
             ProductDataSeedExtention.SeedProducts(builder);
         }
