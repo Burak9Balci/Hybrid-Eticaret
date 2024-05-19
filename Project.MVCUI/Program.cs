@@ -1,9 +1,16 @@
-var builder = WebApplication.CreateBuilder(args);
+using Project.BLL.ServiceInjections;
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddRepositoryService();
+builder.Services.AddManagerServices();
+builder.Services.AddDbContextService();
+builder.Services.AddIdentityServiece();
+builder.Services.AddHttpClient();
+builder.Services.AddDistributedMemoryCache();
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
