@@ -1,4 +1,5 @@
-﻿using Project.ENTITIES.Models;
+﻿using Microsoft.AspNetCore.Identity;
+using Project.ENTITIES.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace Project.BLL.Managers.Abstracts
     {
         Task<bool> AddUserAsync(AppUser user);
         Task AddToRoleAsync(AppUser appUser,string appRole);
+        Task<bool> PasswordSignInAsync(AppUser appUser, string password, bool isPersistent, bool lockoutOnFailure);
     }
 }

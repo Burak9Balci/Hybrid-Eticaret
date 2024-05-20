@@ -92,9 +92,9 @@ namespace Project.DAL.Repositories.Concretes
             await SaveAsync();
         }
 
-        public string Warning()
+        public string Warning(string mesage)
         {
-            return "Ekleme başarısız";
+            return mesage;
         }
 
         public async Task<ICollection<T>> WhereAsync(Expression<Func<T, bool>> exp)

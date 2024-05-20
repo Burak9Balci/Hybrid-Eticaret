@@ -13,5 +13,6 @@ namespace Project.DAL.Repositories.Abstracts
         Task<IdentityResult> AddUserAsync(AppUser user);
 
         Task AddToRoleAsync(AppUser appUser, string appRole);
+        Task<SignInResult> PasswordSignInAsync(AppUser appUser, string password,bool isPersistent, bool lockoutOnFailure);
     }
 }

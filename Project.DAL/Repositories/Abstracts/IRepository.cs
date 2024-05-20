@@ -14,7 +14,7 @@ namespace Project.DAL.Repositories.Abstracts
          Task AddAsync(T item);
          Task DeleteAsync(T item);
          Task UpdateAsync(T item);
-         string Warning();
+         string Warning(string message);
          Task<ICollection<T>> GetAllAsync();    
          Task<ICollection<T>> GetPassiviesAsync();
          Task<ICollection<T>> GetActivesAsync();
