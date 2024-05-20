@@ -9,11 +9,16 @@ using System.Threading.Tasks;
 
 namespace Project.DAL.Repositories.Concretes
 {
-    public class AppRoleRepository : BaseRepository<AppRole>,IAppRoleRepository
+    public class AppRoleRepository : BaseRepository<AppRole>, IAppRoleRepository
     {
         public AppRoleRepository(MyContext db) : base(db) 
         {
 
+        }
+
+        public void AddRole(AppRole role)
+        {
+            throw new NotImplementedException();
         }
     }
 }

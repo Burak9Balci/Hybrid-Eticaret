@@ -14,7 +14,7 @@ namespace Project.BLL.Managers.Abstracts
         Task AddAsync(T item);
         Task DeleteAsync(T item);
         Task UpdateAsync(T item);
-
+        
         Task<ICollection<T>> GetAllAsync();
         Task<ICollection<T>> GetPassiviesAsync();
         Task<ICollection<T>> GetActivesAsync();

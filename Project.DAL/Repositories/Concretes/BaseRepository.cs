@@ -92,6 +92,11 @@ namespace Project.DAL.Repositories.Concretes
             await SaveAsync();
         }
 
+        public string Warning()
+        {
+            return "Ekleme başarısız";
+        }
+
         public async Task<ICollection<T>> WhereAsync(Expression<Func<T, bool>> exp)
         {
            return await _db.Set<T>().Where(exp).ToListAsync();

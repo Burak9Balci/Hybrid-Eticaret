@@ -9,5 +9,7 @@ namespace Project.BLL.Managers.Abstracts
 {
     public interface IAppUserManager : IManager<AppUser>
     {
+        Task<bool> AddUserAsync(AppUser user);
+        Task AddToRoleAsync(AppUser appUser,string appRole);
     }
 }

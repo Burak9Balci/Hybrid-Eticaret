@@ -12,6 +12,7 @@ namespace Project.ENTITIES.Models
     public class AppUser : IdentityUser<int>, IEntity
     {
         public int ID { get; set; }
+        public Guid? ActivationCode { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
         public DateTime? DeletedDate { get; set; }

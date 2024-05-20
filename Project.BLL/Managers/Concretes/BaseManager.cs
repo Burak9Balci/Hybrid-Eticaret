@@ -76,6 +76,8 @@ namespace Project.BLL.Managers.Concretes
             await _iRep.UpdateAsync(item) ;
         }
 
+       
+
         public async Task<ICollection<T>> WhereAsync(Expression<Func<T, bool>> exp)
         {
             return await _iRep.WhereAsync(exp);

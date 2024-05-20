@@ -9,5 +9,7 @@ namespace Project.DAL.Repositories.Abstracts
 {
     public interface IAppRoleRepository : IRepository<AppRole>
     {
+        void AddRole(AppRole role);
+      
     }
 }
