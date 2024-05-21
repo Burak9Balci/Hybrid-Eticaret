@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Project.VM.VMClasses
 {
-    public class AppUserVM
+    public class AppRoleVM
     {
         public int ID { get; set; }
-        public string Password { get; set; }
-        public string UserName { get; set; }
+        public string Name { get; set; }
     }
 }

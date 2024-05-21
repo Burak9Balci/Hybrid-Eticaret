@@ -12,6 +12,6 @@ namespace Project.BLL.Managers.Abstracts
     {
         Task<bool> AddUserAsync(AppUser user);
         Task AddToRoleAsync(AppUser appUser,string appRole);
-        Task<bool> PasswordSignInAsync(AppUser appUser, string password, bool isPersistent, bool lockoutOnFailure);
+        Task<bool> CheckPasswordAsync(AppUser appUser, string password);
     }
 }

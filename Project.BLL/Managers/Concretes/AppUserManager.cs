@@ -41,14 +41,16 @@ namespace Project.BLL.Managers.Concretes
             return false;
         }
 
-        public async Task<bool> PasswordSignInAsync(AppUser appUser, string password, bool isPersistent, bool lockoutOnFailure)
+        public async Task<bool> CheckPasswordAsync(AppUser appUser, string password)
         {
-            SignInResult result = await _iAppUser.PasswordSignInAsync(appUser,password,isPersistent,lockoutOnFailure);
-            if (result.Succeeded)
+            if (await _iAppUser.CheckPasswordAsync(appUser, password))
             {
                 return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
         }
     }
 }

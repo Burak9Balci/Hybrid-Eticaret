@@ -13,5 +13,6 @@ namespace Project.VM.VMClasses
         public decimal UnitPrice { get; set; }
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
+        public string ImagePath { get; set; }
     }
 }

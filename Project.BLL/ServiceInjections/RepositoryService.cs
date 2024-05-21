@@ -18,7 +18,7 @@ namespace Project.BLL.ServiceInjections
             services.AddScoped<IOrderRepository,OrderRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
-            services.AddScoped<IAppUserRepository, AppUserRepository>(); services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IAppUserRepository, AppUserRepository>(); 
             services.AddScoped<IAppRoleRepository, AppRoleRepository>();
             services.AddScoped<IAppUserRoleRepository, AppUserRoleRepository>();
             services.AddScoped<IUserProfileRepository, UserProfileRepository>();

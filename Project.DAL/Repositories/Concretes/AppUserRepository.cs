@@ -12,12 +12,12 @@ namespace Project.DAL.Repositories.Concretes
 {
     public class AppUserRepository : BaseRepository<AppUser>, IAppUserRepository
     {
-        public AppUserRepository(MyContext db, UserManager<AppUser> userManager,SignInManager<AppUser> signIn) : base(db)
+        public AppUserRepository(MyContext db, UserManager<AppUser> userManager) : base(db)
         {
-            _signIn = signIn;
+          
             _uManger = userManager;
         }
-        readonly SignInManager<AppUser> _signIn;
+      
         readonly UserManager<AppUser> _uManger;
         public async Task<IdentityResult> AddUserAsync(AppUser user)
         {
@@ -30,10 +30,11 @@ namespace Project.DAL.Repositories.Concretes
             await _uManger.AddToRoleAsync(appUser, appRole);
         }
 
-        public async Task<SignInResult> PasswordSignInAsync(AppUser appUser, string password, bool isPersistent, bool lockoutOnFailure)
+        public async Task<bool> CheckPasswordAsync(AppUser appUser, string password)
         {
-            SignInResult result = await _signIn.PasswordSignInAsync(appUser,password,isPersistent,lockoutOnFailure);
+            bool result = await _uManger.CheckPasswordAsync(appUser, password);
             return result;
+          
         }
     }
 }
