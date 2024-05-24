@@ -52,5 +52,10 @@ namespace Project.BLL.Managers.Concretes
                 return false;
             }
         }
+
+        public async Task<IList<string>> GetRolesAsync(AppUser appUser)
+        {
+          return await _iAppUser.GetRolesAsync(appUser);
+        }
     }
 }

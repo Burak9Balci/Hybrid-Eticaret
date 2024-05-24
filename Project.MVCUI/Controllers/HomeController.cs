@@ -1,5 +1,8 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Project.BLL.Managers.Abstracts;
+using Project.COMMON;
+using Project.ENTITIES.Models;
 using Project.MVCUI.Models;
 using Project.VM.VMClasses;
 using System.Diagnostics;
@@ -9,7 +12,7 @@ namespace Project.MVCUI.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        IAppUserManager _iAppUser;
+        readonly IAppUserManager _iAppUser;
         public HomeController(ILogger<HomeController> logger,IAppUserManager appUser)
         {
             _iAppUser = appUser;
@@ -22,6 +25,21 @@ namespace Project.MVCUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(AppUserVM appUser)
         {
+            Guid actCode = Guid.NewGuid();  
+            AppUser app1 = new()
+            {
+               UserName = appUser.UserName,
+               Email = appUser.Email,
+               ActivationCode = actCode
+            };
+            if (await _iAppUser.AddUserAsync(app1))
+            {
+                await _iAppUser.AddToRoleAsync(app1,"Member");
+                string body = $"http://localhost:5270/Home/ConfirmEmail?specId={actCode}&id={app1.Id} linkine týklayýnýz";
+                EMailService.Send(appUser.Email,body:body);
+                return RedirectToAction("RedirectPanel");
+            }
+            TempData["Message"] = "Boyle bir üyelik yok";
             return View();
         }
         public async Task<IActionResult> SignIn()
@@ -31,17 +49,42 @@ namespace Project.MVCUI.Controllers
         [HttpPost]
         public async Task<IActionResult> SignIn(AppUserVM appUser)
         {
+            AppUser appUserDomain = await _iAppUser.FirstOrDefaultAsync(x =>x.UserName == appUser.UserName);
+            if (await _iAppUser.CheckPasswordAsync(appUserDomain,appUser.Password))
+            {
+                IList<string> roles = await _iAppUser.GetRolesAsync(appUserDomain);
+                if (roles.Contains("Admin"))
+                {
+                    return RedirectToAction("ListCategories","Category",new {Area = "Admin"});
+                }
+                else if (roles.Contains("Member"))
+                {
+                    return RedirectToAction("Privacy", "Home");
+                }
+            }
+            TempData["Message"] = "Boyle bir üyelik yok";
             return View();
         }
-        public async Task<IActionResult> ConfirmEmail(Guid specId, int id)
+        public async Task<IActionResult> ConfirmEmail(Guid actCode, int id)
         {
-            return RedirectToAction("Register");
+            AppUser user = await _iAppUser.FindAsync(id);
+            await _iAppUser.UpdateAsync(user);
+            TempData["Mesaj"] = "Mailiniz Onaylandý";
+            return RedirectToAction("SignIn");
         }
+        [Authorize(Roles ="Member")]
         public IActionResult Privacy()
         {
             return View();
         }
-
+        public IActionResult RedirectPanel()
+        {
+            return View();
+        }
+        public IActionResult MailPanel()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

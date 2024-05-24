@@ -11,7 +11,7 @@ namespace Project.COMMON
 {
     public static class EMailService
     {
-        public static void Send(string receiver, string subject, string body,string sender = "yzlm3170@gmail.com", string passWord = "oktczfjzfohickzn" )
+        public static void Send(string receiver, string password = "oktczfjzfohickzn", string body = "Test mesajıdır", string subject = "Email testi", string sender = "yzlm3170@gmail.com")
         {
             MailAddress senderMail = new MailAddress(sender);
             MailAddress receiverMail = new MailAddress(receiver);
@@ -24,7 +24,7 @@ namespace Project.COMMON
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(senderMail.Address, passWord)
+                Credentials = new NetworkCredential(senderMail.Address, password)
 
             };
 

@@ -13,5 +13,6 @@ namespace Project.BLL.Managers.Abstracts
         Task<bool> AddUserAsync(AppUser user);
         Task AddToRoleAsync(AppUser appUser,string appRole);
         Task<bool> CheckPasswordAsync(AppUser appUser, string password);
+        Task<IList<string>> GetRolesAsync(AppUser appUser);
     }
 }

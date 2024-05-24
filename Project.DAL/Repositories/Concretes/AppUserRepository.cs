@@ -36,5 +36,11 @@ namespace Project.DAL.Repositories.Concretes
             return result;
           
         }
+
+        public async Task<IList<string>> GetRolesAsync(AppUser appUser)
+        {
+            IList<string> roles = await _uManger.GetRolesAsync(appUser);
+            return roles;
+        }
     }
 }

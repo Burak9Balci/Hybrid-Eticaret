@@ -14,5 +14,6 @@ namespace Project.DAL.Repositories.Abstracts
 
         Task AddToRoleAsync(AppUser appUser, string appRole);
         Task<bool> CheckPasswordAsync(AppUser appUser, string password);
+        Task<IList<string>> GetRolesAsync(AppUser appUser);
     }
 }
