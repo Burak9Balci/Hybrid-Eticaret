@@ -24,6 +24,12 @@ namespace Project.DAL.Extentions
                 Name = "Member"
             };
             modelBuilder.Entity<AppRole>().HasData(role2);
+            AppRole role3 = new()
+            {
+                Id = 3,
+                Name = "Developer"
+            };
+            modelBuilder.Entity<AppRole>().HasData(role3);
         }
     }
 }
