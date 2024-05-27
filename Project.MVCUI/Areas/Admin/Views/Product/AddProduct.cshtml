@@ -1,0 +1,25 @@
+﻿@model ProductAddUpdatePageVM
+
+<form asp-action="AddProduct"asp-controller="Product" method="post" class="form-control">
+    <div>
+        <input asp-for="Product.ProductName"/>
+    </div>
+    <div>
+        <input asp-for="Product.UnitPrice" />
+    </div>
+    <div>
+        <select asp-for="Product.CategoryID" asp-items='new SelectList(Model.Categories,"ID","CategoryName")'>
+
+        </select>
+    </div>
+    <div class="mb-3">
+        <label>Dosya seciniz</label>
+        <input type="file" asp-for="Product.ImagePath" class="form-control" />
+    </div>
+    <div>
+        <button class="btn btn-primary">
+            Urun Yarat
+        </button>
+    </div>
+  
+</form>

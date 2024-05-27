@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Project.BLL.Managers.Abstracts;
 using Project.COMMON;
+using Project.ENTITIES.Enums;
 using Project.ENTITIES.Models;
 using Project.MVCUI.Models;
 using Project.VM.VMClasses;
@@ -50,7 +51,7 @@ namespace Project.MVCUI.Controllers
         public async Task<IActionResult> SignIn(AppUserVM appUser)
         {
             AppUser appUserDomain = await _iAppUser.FirstOrDefaultAsync(x =>x.UserName == appUser.UserName);
-            if (await _iAppUser.CheckPasswordAsync(appUserDomain,appUser.Password))
+            if (await _iAppUser.CheckPasswordAsync(appUserDomain,appUser.Password) && appUserDomain.Status == DataStatus.Updated)
             {
                 IList<string> roles = await _iAppUser.GetRolesAsync(appUserDomain);
                 if (roles.Contains("Admin"))
@@ -61,6 +62,10 @@ namespace Project.MVCUI.Controllers
                 {
                     return RedirectToAction("Privacy", "Home");
                 }
+            }
+            else if (await _iAppUser.CheckPasswordAsync(appUserDomain, appUser.Password) && appUserDomain.Status != DataStatus.Updated)
+            {
+                return RedirectToAction("RedirectPanel");
             }
             TempData["Message"] = "Boyle bir üyelik yok";
             return View();

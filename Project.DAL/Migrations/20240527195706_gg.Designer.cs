@@ -12,8 +12,8 @@ using Project.DAL.ContextClasses;
 namespace Project.DAL.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20240521114321_dd")]
-    partial class dd
+    [Migration("20240527195706_gg")]
+    partial class gg
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -162,14 +162,14 @@ namespace Project.DAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 427, DateTimeKind.Local).AddTicks(7696),
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 816, DateTimeKind.Local).AddTicks(8311),
                             Name = "Admin",
                             Status = 1
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 427, DateTimeKind.Local).AddTicks(7764),
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 816, DateTimeKind.Local).AddTicks(8359),
                             Name = "Member",
                             Status = 1
                         });
@@ -324,81 +324,81 @@ namespace Project.DAL.Migrations
                         new
                         {
                             ID = 1,
-                            CategoryName = "Tools",
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 427, DateTimeKind.Local).AddTicks(7784),
-                            Description = "Quis quam minima quia dolor aliquam quia nesciunt nemo okuma.\nDe numquam quia çarpan sokaklarda mıknatıslı laudantium.\nBeatae gülüyorum aut anlamsız.\nMutlu mutlu mi orta.\nSevindi bilgiyasayarı telefonu uzattı.\nSıfat tempora ve ötekinden ad çobanın bundan sokaklarda.\nKoştum çarpan inventore aspernatur ki dolore aliquid nisi camisi doğru.\nSed ut domates aut.\nCommodi fugit koşuyorlar aut nostrum commodi ullam velit sevindi mi.\nMakinesi enim sayfası layıkıyla molestiae layıkıyla eaque karşıdakine nostrum.",
+                            CategoryName = "Automotive",
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 816, DateTimeKind.Local).AddTicks(8401),
+                            Description = "Dağılımı öyle aut consequatur sit magnam gül ipsam gitti camisi.\nVoluptatem doğru voluptatem balıkhaneye enim laboriosam alias minima aut.\nMinima ışık salladı voluptatem consequuntur kulu çakıl.\nÇünkü doğru masanın filmini değirmeni laboriosam qui ea gülüyorum aperiam.\nUt qui vitae çorba consequuntur perferendis.\nBatarya ut odit ut qui.\nHesap aliquid hesap çakıl veniam veniam.\nDüşünüyor esse voluptatum rem oldular vitae öyle eve.\nQui teldeki ut enim magnam layıkıyla ducimus çarpan dignissimos.\nNisi gidecekmiş laboriosam.",
                             Status = 1
                         },
                         new
                         {
                             ID = 2,
-                            CategoryName = "Health",
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 427, DateTimeKind.Local).AddTicks(8287),
-                            Description = "Sinema için ducimus.\nEnim laudantium okuma sandalye ki batarya ratione quae dolores eos.\nEsse ipsam ut dolayı aliquid labore sed quaerat.\nMinima quae deleniti aperiam rem.\nGül odio perferendis nostrum sit.\nEa makinesi makinesi okuma bilgiyasayarı quia.\nMasaya rem adanaya dışarı ratione ipsam.\nAd değerli ama illo quasi sed.\nDüşünüyor illo ama vel teldeki gördüm gazete.\nOlduğu adipisci doğru koyun koyun biber tempora qui koştum voluptas.",
+                            CategoryName = "Kids",
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 816, DateTimeKind.Local).AddTicks(8960),
+                            Description = "Salladı ona ut.\nÇakıl ki türemiş sokaklarda et filmini voluptatem.\nKoştum kalemi masanın.\nYazın mıknatıslı veritatis quia ut consequatur.\nAmet gül gördüm sit sevindi ötekinden eve.\nNisi ipsum mutlu değirmeni voluptatum.\nQuis çobanın veritatis.\nVoluptatem alias aut vitae perferendis ona exercitationem dolorem.\nTv türemiş sed aut mutlu ea.\nTv ışık kulu ea vitae sokaklarda eaque qui ex quam.",
                             Status = 1
                         },
                         new
                         {
                             ID = 3,
-                            CategoryName = "Movies",
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 427, DateTimeKind.Local).AddTicks(8502),
-                            Description = "Dolorem quis magni.\nDucimus aut okuma biber quia qui ea karşıdakine.\nDeğerli veniam commodi için için.\nQuia yapacakmış ışık veniam adipisci telefonu praesentium karşıdakine beğendim.\nBiber blanditiis layıkıyla dolore et cezbelendi.\nCorporis dergi dolor layıkıyla dicta yazın karşıdakine.\nBilgiyasayarı beatae autem bilgisayarı commodi biber lambadaki.\nEsse fugit consequatur totam vel perferendis illo veritatis dağılımı.\nDicta dolor aspernatur otobüs voluptatum ona quia.\nDağılımı un bilgisayarı dolor.",
+                            CategoryName = "Baby",
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 816, DateTimeKind.Local).AddTicks(9166),
+                            Description = "İpsa duyulmamış çobanın et bilgiyasayarı laudantium gazete.\nSalladı eve mıknatıslı totam voluptatem ut bundan eum.\nNumquam praesentium sit velit koşuyorlar architecto voluptatem bilgisayarı ratione.\nEve adanaya çobanın quasi.\nÖtekinden eum ipsam aperiam balıkhaneye.\nLaudantium çakıl kalemi camisi.\nTv velit çobanın.\nTüremiş lambadaki gitti eve.\nİncidunt nesciunt quia consequatur dolor tv karşıdakine ipsa eum ratione.\nUmut dolore perferendis camisi et beğendim sokaklarda quis odit dolore.",
                             Status = 1
                         },
                         new
                         {
                             ID = 4,
-                            CategoryName = "Shoes",
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 427, DateTimeKind.Local).AddTicks(8716),
-                            Description = "Exercitationem aut dergi orta okuma.\nEkşili nihil mıknatıslı quasi ötekinden otobüs et consequatur filmini.\nBilgisayarı quia değerli molestiae nemo qui perferendis.\nSokaklarda çarpan sandalye ki suscipit sequi teldeki otobüs cesurca.\nEt deleniti lakin değerli ut aperiam oldular exercitationem sıradanlıktan.\nUllam açılmadan umut ama inventore velit fugit.\nYapacakmış quis sit dışarı öyle in ea ipsam ipsum vitae.\nEve ut veniam umut ratione incidunt sayfası accusantium gül.\nVeniam neque değerli sarmal için.\nGöze mi non blanditiis cesurca quaerat.",
+                            CategoryName = "Garden",
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 816, DateTimeKind.Local).AddTicks(9362),
+                            Description = "Mıknatıslı labore molestiae salladı cesurca.\nGazete odio veritatis çıktılar lambadaki teldeki nihil.\nSıla masaya beğendim.\nYaptı consequuntur batarya doloremque.\nAlias adipisci aut.\nConsequatur quis voluptatum gitti labore illo uzattı.\nMolestiae dicta quis iusto eos göze.\nSit corporis quia.\nBahar beatae dignissimos türemiş.\nOna aliquid çünkü vitae ötekinden kalemi nisi nisi.",
                             Status = 1
                         },
                         new
                         {
                             ID = 5,
-                            CategoryName = "Music",
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 427, DateTimeKind.Local).AddTicks(8921),
-                            Description = "Consectetur makinesi mıknatıslı.\nOrta velit dignissimos orta makinesi eius açılmadan aliquid.\nDignissimos suscipit ex.\nDüşünüyor değerli oldular quam.\nOna layıkıyla corporis qui quia koştum mutlu anlamsız.\nSit ki bilgisayarı.\nAmet modi suscipit açılmadan.\nMolestiae sit yazın sevindi anlamsız öyle minima hesap koşuyorlar.\nCommodi eve adipisci değerli numquam aspernatur qui consequatur.\nAd magni ki iure exercitationem ut gidecekmiş yaptı.",
+                            CategoryName = "Toys",
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 816, DateTimeKind.Local).AddTicks(9548),
+                            Description = "Sarmal bundan sed ad incidunt dolores esse dolore et laboriosam.\nAma bahar sıradanlıktan sevindi filmini mutlu.\nNostrum sokaklarda filmini bilgisayarı ut accusantium oldular laudantium.\nRem dicta masanın odit sarmal.\nTelefonu göze odit ab nihil ut.\nVeniam quasi umut amet ki layıkıyla aperiam dolor cezbelendi.\nİure filmini autem masaya göze bahar.\nOtobüs göze magnam.\nCesurca telefonu iure.\nArchitecto et ut dolore.",
                             Status = 1
                         },
                         new
                         {
                             ID = 6,
-                            CategoryName = "Games",
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 427, DateTimeKind.Local).AddTicks(9084),
-                            Description = "Ut ipsam sıfat sed sequi gül koştum.\nVelit mutlu sinema nesciunt quia yapacakmış dağılımı koştum in.\nAma sunt ullam dolorem.\nAmet tempora consequatur aut commodi iusto bundan nostrum olduğu sıfat.\nAnlamsız explicabo sit numquam sayfası kalemi voluptatem.\nMıknatıslı çorba nisi aut sinema gazete.\nİpsa velit yaptı ipsum.\nAdipisci ve qui et explicabo consequatur.\nDeğirmeni enim dolores duyulmamış minima göze aut dolorem neque.\nİnventore yazın öyle nihil tv adipisci.",
+                            CategoryName = "Kids",
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 816, DateTimeKind.Local).AddTicks(9728),
+                            Description = "Voluptate ona telefonu iure gidecekmiş consequuntur dignissimos labore.\nVoluptatem gülüyorum sinema.\nAdanaya göze aliquid ipsum gitti illo.\nEt magnam kutusu masanın uzattı otobüs voluptatem türemiş orta kalemi.\nBatarya veritatis un gülüyorum açılmadan de magnam consequatur değerli magnam.\nLakin architecto türemiş nihil ipsa corporis filmini.\nAliquid eius uzattı.\nİpsum ipsam kutusu kapının.\nAdanaya filmini de layıkıyla oldular veniam ut mi ki.\nNisi kalemi bahar quaerat consectetur çorba eius alias yaptı gülüyorum.",
                             Status = 1
                         },
                         new
                         {
                             ID = 7,
-                            CategoryName = "Movies",
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 427, DateTimeKind.Local).AddTicks(9292),
-                            Description = "Qui dergi voluptatem qui teldeki dicta aut vel bilgiyasayarı çakıl.\nMakinesi inventore quia illo gülüyorum minima batarya beğendim eaque aliquid.\nGöze cezbelendi quasi commodi quis veniam türemiş.\nNostrum batarya quae balıkhaneye.\nDomates masanın batarya dolor sıradanlıktan.\nBeğendim uzattı beğendim numquam oldular camisi çobanın.\nMakinesi çakıl sıla ipsam qui layıkıyla koşuyorlar.\nSayfası mi ut masaya et sit suscipit doğru eius.\nİpsa masaya incidunt.\nEius şafak quia yazın orta telefonu totam.",
+                            CategoryName = "Toys",
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 816, DateTimeKind.Local).AddTicks(9902),
+                            Description = "Cezbelendi telefonu sıradanlıktan magni.\nEa voluptatem non ipsa dağılımı filmini masanın otobüs bilgisayarı ducimus.\nConsequatur aut sed.\nDoğru koşuyorlar nihil değirmeni orta sit.\nQui gitti exercitationem yazın.\nKoştum yazın camisi odio batarya qui lakin in minima oldular.\nMagnam gül architecto çıktılar nostrum değerli modi bahar eos.\nBundan açılmadan ki ratione olduğu sit göze anlamsız labore masaya.\nKutusu okuma ipsa velit beatae aliquam lambadaki.\nSıfat sevindi voluptatem commodi gördüm.",
                             Status = 1
                         },
                         new
                         {
                             ID = 8,
-                            CategoryName = "Games",
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 427, DateTimeKind.Local).AddTicks(9456),
-                            Description = "Makinesi sevindi sevindi.\nConsequatur suscipit dolorem rem eius lambadaki ekşili.\nLayıkıyla ekşili lakin blanditiis sed ki dolores doloremque çorba molestiae.\nBilgisayarı ut molestiae gazete sed gülüyorum.\nBeğendim ut açılmadan labore.\nDolorem ut incidunt odio eos göze karşıdakine.\nConsequuntur gül beatae enim ki patlıcan magni otobüs.\nDeleniti sunt patlıcan.\nAut sarmal de nisi velit.\nFugit kapının çorba voluptatem odit.",
+                            CategoryName = "Sports",
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 817, DateTimeKind.Local).AddTicks(71),
+                            Description = "Velit koştum batarya.\nDuyulmamış kutusu consequatur laudantium reprehenderit değerli neque teldeki sunt.\nNon layıkıyla yapacakmış neque ışık enim.\nTempora non ab adresini quia düşünüyor değirmeni patlıcan corporis.\nEt masanın öyle dolorem doğru ut aut.\nLambadaki adanaya aut beğendim ona voluptatem.\nÇıktılar çünkü ducimus corporis mutlu enim.\nAut velit sed inventore ama non karşıdakine.\nAdresini iure autem kutusu sinema koyun için laboriosam alias.\nNihil vel dolores sed nemo değirmeni.",
                             Status = 1
                         },
                         new
                         {
                             ID = 9,
-                            CategoryName = "Computers",
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 427, DateTimeKind.Local).AddTicks(9605),
-                            Description = "Qui ex mutlu ışık.\nÇakıl ve çıktılar eum ut okuma labore.\nAperiam ex quis ki voluptatem aspernatur un quasi bahar alias.\nConsequatur qui dolor quia ki sunt voluptatem ab batarya.\nQui ona makinesi ut açılmadan.\nAb ut koyun.\nOdit cesurca batarya quasi ipsum labore masaya.\nEt et domates sunt gidecekmiş tempora quae mutlu aliquam.\nMinima mıknatıslı et sinema consequatur gül uzattı masaya.\nOrta de bilgisayarı incidunt ullam consequatur adanaya değerli.",
+                            CategoryName = "Outdoors",
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 817, DateTimeKind.Local).AddTicks(275),
+                            Description = "Odit illo molestiae ad sarmal ipsum quam mıknatıslı.\nÇobanın aliquid aut layıkıyla bilgisayarı öyle un fugit.\nNesciunt in şafak quaerat nostrum.\nBatarya voluptas minima.\nVoluptatem sit blanditiis nemo amet.\nSarmal quia enim.\nDe tv ea göze nesciunt.\nÇünkü ad otobüs değirmeni.\nEius sokaklarda sandalye yaptı mıknatıslı.\nIşık değerli ut ipsam adresini ad.",
                             Status = 1
                         },
                         new
                         {
                             ID = 10,
-                            CategoryName = "Health",
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 427, DateTimeKind.Local).AddTicks(9790),
-                            Description = "İpsum odit masaya odio şafak sevindi.\nOkuma numquam quaerat ama consectetur.\nEnim yazın koyun salladı dolorem tempora alias.\nOrta iure makinesi labore çorba.\nÇünkü sıfat sit dolorem eve dışarı patlıcan lakin sunt dolor.\nAut laudantium in eum sokaklarda teldeki domates beğendim quia dicta.\nİnventore düşünüyor çarpan illo inventore amet aliquid aut aut.\nAdanaya nihil sinema.\nQuia ducimus un accusantium sayfası dolores ekşili yapacakmış.\nIşık sequi eius inventore eve.",
+                            CategoryName = "Automotive",
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 817, DateTimeKind.Local).AddTicks(423),
+                            Description = "Ratione non mıknatıslı odit.\nMıknatıslı adanaya dışarı ekşili sandalye layıkıyla.\nGülüyorum tempora aut ışık çakıl consequatur.\nMagni makinesi aut değirmeni ipsa dergi un nisi doloremque.\nSandalye magnam gül architecto.\nEve makinesi incidunt doğru modi öyle.\nİçin cesurca ullam voluptatum masanın bilgisayarı quia numquam teldeki lakin.\nExercitationem gül iusto değirmeni sunt duyulmamış ex.\nAliquid sed çakıl.\nMakinesi odit masanın değirmeni aut odio çakıl ut.",
                             Status = 1
                         });
                 });
@@ -521,111 +521,111 @@ namespace Project.DAL.Migrations
                         {
                             ID = 1,
                             CategoryID = 1,
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 428, DateTimeKind.Local).AddTicks(21),
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 817, DateTimeKind.Local).AddTicks(635),
                             ImagePath = "http://lorempixel.com/640/480/nightlife",
-                            ProductName = "Gorgeous Metal Hat",
+                            ProductName = "Small Frozen Chips",
                             Status = 1,
                             UnitInStock = 100,
-                            UnitPrice = 555.19m
+                            UnitPrice = 35.20m
                         },
                         new
                         {
                             ID = 2,
                             CategoryID = 2,
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 428, DateTimeKind.Local).AddTicks(243),
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 817, DateTimeKind.Local).AddTicks(850),
                             ImagePath = "http://lorempixel.com/640/480/nightlife",
-                            ProductName = "Incredible Fresh Sausages",
+                            ProductName = "Incredible Steel Bike",
                             Status = 1,
                             UnitInStock = 100,
-                            UnitPrice = 514.94m
+                            UnitPrice = 324.38m
                         },
                         new
                         {
                             ID = 3,
                             CategoryID = 3,
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 428, DateTimeKind.Local).AddTicks(300),
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 817, DateTimeKind.Local).AddTicks(930),
                             ImagePath = "http://lorempixel.com/640/480/nightlife",
-                            ProductName = "Refined Fresh Keyboard",
+                            ProductName = "Small Concrete Bacon",
                             Status = 1,
                             UnitInStock = 100,
-                            UnitPrice = 463.66m
+                            UnitPrice = 324.36m
                         },
                         new
                         {
                             ID = 4,
                             CategoryID = 4,
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 428, DateTimeKind.Local).AddTicks(370),
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 817, DateTimeKind.Local).AddTicks(975),
                             ImagePath = "http://lorempixel.com/640/480/nightlife",
-                            ProductName = "Rustic Granite Ball",
+                            ProductName = "Generic Soft Sausages",
                             Status = 1,
                             UnitInStock = 100,
-                            UnitPrice = 278.82m
+                            UnitPrice = 616.86m
                         },
                         new
                         {
                             ID = 5,
                             CategoryID = 5,
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 428, DateTimeKind.Local).AddTicks(408),
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 817, DateTimeKind.Local).AddTicks(1016),
                             ImagePath = "http://lorempixel.com/640/480/nightlife",
-                            ProductName = "Generic Concrete Tuna",
+                            ProductName = "Rustic Metal Computer",
                             Status = 1,
                             UnitInStock = 100,
-                            UnitPrice = 192.07m
+                            UnitPrice = 327.34m
                         },
                         new
                         {
                             ID = 6,
                             CategoryID = 6,
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 428, DateTimeKind.Local).AddTicks(452),
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 817, DateTimeKind.Local).AddTicks(1058),
                             ImagePath = "http://lorempixel.com/640/480/nightlife",
-                            ProductName = "Ergonomic Rubber Chips",
+                            ProductName = "Refined Rubber Salad",
                             Status = 1,
                             UnitInStock = 100,
-                            UnitPrice = 389.40m
+                            UnitPrice = 72.84m
                         },
                         new
                         {
                             ID = 7,
                             CategoryID = 7,
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 428, DateTimeKind.Local).AddTicks(490),
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 817, DateTimeKind.Local).AddTicks(1099),
                             ImagePath = "http://lorempixel.com/640/480/nightlife",
-                            ProductName = "Practical Metal Hat",
+                            ProductName = "Generic Soft Gloves",
                             Status = 1,
                             UnitInStock = 100,
-                            UnitPrice = 27.98m
+                            UnitPrice = 630.71m
                         },
                         new
                         {
                             ID = 8,
                             CategoryID = 8,
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 428, DateTimeKind.Local).AddTicks(527),
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 817, DateTimeKind.Local).AddTicks(1175),
                             ImagePath = "http://lorempixel.com/640/480/nightlife",
-                            ProductName = "Small Soft Towels",
+                            ProductName = "Gorgeous Soft Keyboard",
                             Status = 1,
                             UnitInStock = 100,
-                            UnitPrice = 762.77m
+                            UnitPrice = 721.47m
                         },
                         new
                         {
                             ID = 9,
                             CategoryID = 9,
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 428, DateTimeKind.Local).AddTicks(601),
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 817, DateTimeKind.Local).AddTicks(1213),
                             ImagePath = "http://lorempixel.com/640/480/nightlife",
-                            ProductName = "Handmade Rubber Computer",
+                            ProductName = "Small Concrete Cheese",
                             Status = 1,
                             UnitInStock = 100,
-                            UnitPrice = 254.17m
+                            UnitPrice = 513.75m
                         },
                         new
                         {
                             ID = 10,
                             CategoryID = 10,
-                            CreatedDate = new DateTime(2024, 5, 21, 14, 43, 20, 428, DateTimeKind.Local).AddTicks(637),
+                            CreatedDate = new DateTime(2024, 5, 27, 22, 57, 5, 817, DateTimeKind.Local).AddTicks(1254),
                             ImagePath = "http://lorempixel.com/640/480/nightlife",
-                            ProductName = "Ergonomic Steel Gloves",
+                            ProductName = "Handmade Fresh Table",
                             Status = 1,
                             UnitInStock = 100,
-                            UnitPrice = 702.62m
+                            UnitPrice = 471.05m
                         });
                 });
 

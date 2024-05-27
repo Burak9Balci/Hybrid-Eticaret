@@ -8,6 +8,10 @@ namespace Project.ENTITIES.Models
 {
     public class Product:BaseEntity
     {
+        public Product()
+        {
+            UnitInStock = 100;
+        }
         public string ProductName { get; set; }
         public decimal UnitPrice { get; set; }
         public int UnitInStock { get; set; }

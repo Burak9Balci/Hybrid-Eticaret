@@ -23,7 +23,7 @@ namespace Project.MVCUI.Areas.Admin.Controllers
                     ID = x.ID,
                     CategoryName = x.CategoryName,
                     Description = x.Description,
-
+                    Status = x.Status,
 
                 }).ToListAsync()
             };

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.ENTITIES.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,6 @@ namespace Project.VM.VMClasses
         public string Password { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
+        public DataStatus Status { get; set; }
     }
 }

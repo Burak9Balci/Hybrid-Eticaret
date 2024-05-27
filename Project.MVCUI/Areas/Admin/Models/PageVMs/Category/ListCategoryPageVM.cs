@@ -4,6 +4,6 @@ namespace Project.MVCUI.Areas.Admin.Models.PageVMs.Category
 {
     public class ListCategoryPageVM
     {
-        public List<CategoryVM> Categories { get; set; }
+        public ICollection<CategoryVM> Categories { get; set; }
     }
 }

@@ -25,8 +25,10 @@ namespace Project.MVCUI.Areas.Admin.Controllers
                   ID = x.ID,
                   ProductName = x.ProductName,
                   UnitPrice = x.UnitPrice,
-                  CategoryID = x.CategoryID,
-                  ImagePath = x.ImagePath
+                  UnitInStock = x.UnitInStock,
+                  CategoryName = x.Category.CategoryName,
+                  ImagePath = x.ImagePath,
+                  Status = x.Status
 
               }).ToListAsync(),
             };
@@ -52,8 +54,8 @@ namespace Project.MVCUI.Areas.Admin.Controllers
             {
                 ProductName = product.ProductName,
                 UnitPrice = product.UnitPrice,
-                CategoryID = product.CategoryID,
-                ImagePath = product.ImagePath,
+                Category = await _cManager.FindAsync(product.CategoryID),
+                ImagePath = product.ImagePath ,
 
             };
             await _productManager.AddAsync(p);
@@ -82,6 +84,7 @@ namespace Project.MVCUI.Areas.Admin.Controllers
             };
             return View(productPageVM);
         }
+        [HttpPost]
         public async Task<IActionResult> UpdateProduct(ProductVM product)
         {
             Product p = await _productManager.FindAsync(product.ID);

@@ -1,0 +1,33 @@
+﻿@model ListProductPageVM
+<div>
+    <br />
+    <section>
+        <a asp-action="AddProduct" class="btn btn-primary">Add Product</a>
+    </section>
+    <br />
+    <table class="table table-hover">
+        <tr>
+            <th>ID</th>
+            <th>ProductName</th>
+            <th>UnitPrice</th>
+            <th>UnitInStock</th>
+            <th>CategoryName</th>
+            <th>Status</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        @foreach (ProductVM item in Model.Products)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.ProductName</td>
+                <td>@item.UnitPrice</td>
+                <td>@item.UnitInStock</td>
+                <td>@item.CategoryName</td>
+                <td>@item.Status</td>
+                <td><a asp-action="UpdateProduct" asp-route-id="@item.ID" class="btn btn-warning">Update</a></td>
+                <td><a asp-action="DeleteProduct" asp-route-id="@item.ID" class="btn btn-danger">Delete</a></td>
+            </tr>
+        }
+    </table>
+</div>
