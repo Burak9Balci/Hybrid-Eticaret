@@ -20,20 +20,15 @@ namespace Project.BLL.Managers.Concretes
             _iAppRole = iAppRole;
         }
 
-        public async Task AddToRoleAsync(AppUser appUser, string appRole)
+        public async Task AddToRoleAsync(AppUser appUser, AppRole appRole)
         {
-            
-            if (await _iAppRole.FirstOrDefaultAsync(x => x.Name == appRole) != null) await _iAppUser.AddToRoleAsync(appUser,appRole);
-            else
-            {
-                _iAppUser.Warning("Role bulunamadı");
-            }
+           await _iAppUser.AddToRoleAsync(appUser,appRole);
         }
 
         public async Task<bool> AddUserAsync(AppUser user)
         {
             IdentityResult result = await _iAppUser.AddUserAsync(user);
-            if (result.Succeeded)
+            if (result.Succeeded && user.Agree == true)
             {
                 return true;
             }

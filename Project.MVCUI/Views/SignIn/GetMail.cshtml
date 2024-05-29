@@ -1,0 +1,11 @@
+﻿@model AppUserVM
+
+<form asp-action="GetMail" asp-controller="SignIn" method="post" class="form-control">
+    <h1> @TempData["Redirect"]</h1>
+    <div>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div>
+        <div><button class="btn btn-primary"></button></div>
+    </div>
+</form>

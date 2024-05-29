@@ -1,0 +1,27 @@
+﻿@model AppUserVM
+
+<form asp-action="Register" asp-controller="Register"method="post" class="form-control">
+    <div>
+        <label> Email </label>
+        <input asp-for="Email" class="form-control" />
+    </div> 
+    <br />
+    <div>
+        <label> UserName </label>
+        <input asp-for="UserName" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label> Password</label>
+        <input type="password" asp-for="Password" class="form-control" />
+    </div>
+    <div><a asp-action="Deal" class="">Anlaşma Kuralları</a></div>
+    <div>  <input type="checkbox" asp-for="Agree"/> Anlaşmayı Kabul et </div>
+    
+    <br />
+    <div>
+        <button class="btn btn-primary">Uye ol</button>
+    </div>
+    <h1>@TempData["Mesaj"]</h1>
+    <h1>@TempData["Message"]</h1>
+</form>

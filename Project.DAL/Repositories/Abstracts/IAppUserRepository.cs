@@ -12,7 +12,7 @@ namespace Project.DAL.Repositories.Abstracts
     {
         Task<IdentityResult> AddUserAsync(AppUser user);
 
-        Task AddToRoleAsync(AppUser appUser, string appRole);
+        Task AddToRoleAsync(AppUser appUser, AppRole appRole);
         Task<bool> CheckPasswordAsync(AppUser appUser, string password);
         Task<IList<string>> GetRolesAsync(AppUser appUser);
     }

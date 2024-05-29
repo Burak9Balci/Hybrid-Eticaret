@@ -12,9 +12,11 @@ namespace Project.DAL.Repositories.Concretes
 {
     public class AppUserRepository : BaseRepository<AppUser>, IAppUserRepository
     {
+        
         public AppUserRepository(MyContext db, UserManager<AppUser> userManager) : base(db)
         {
           
+            
             _uManger = userManager;
         }
       
@@ -25,9 +27,18 @@ namespace Project.DAL.Repositories.Concretes
            return result;
         }
 
-        public async Task AddToRoleAsync(AppUser appUser, string appRole)
+        public async Task AddToRoleAsync(AppUser appUser, AppRole appRole)
         {
-            await _uManger.AddToRoleAsync(appUser, appRole);
+
+            List<AppUserRole> allRoles = new List<AppUserRole>()
+            {
+                new AppUserRole
+                {
+                    Role = appRole,
+                    User = appUser
+                }
+            };
+            appUser.UserRoles = allRoles;
         }
 
         public async Task<bool> CheckPasswordAsync(AppUser appUser, string password)

@@ -1,0 +1,20 @@
+﻿@model AppUserVM
+
+<form asp-action="Login" asp-controller="SignIn" method="post" class="form-control">
+    <div>
+        <label> Email </label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label> Password</label>
+        <input asp-for="Password" class="form-control" />
+    </div>
+    <div>
+        <a asp-action="GetMail">Sifremi sifirla</a>
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-primary">Giriş Yap</button>
+    </div>
+</form>

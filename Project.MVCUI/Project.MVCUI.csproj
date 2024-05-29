@@ -24,10 +24,13 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Developer\Controllers\" />
-    <Folder Include="Areas\Developer\Data\" />
-    <Folder Include="Areas\Developer\Models\" />
-    <Folder Include="Areas\Developer\Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\SignIn\Login.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
