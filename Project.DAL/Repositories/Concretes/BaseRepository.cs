@@ -87,7 +87,8 @@ namespace Project.DAL.Repositories.Concretes
         {
             item.Status = ENTITIES.Enums.DataStatus.Updated;
             item.ModifiedDate = DateTime.Now;
-            T toBeUpdated = await _db.Set<T>().FindAsync(item.ID);
+         //   T toBeUpdated = await FindAsync(item.ID);  sor
+            T toBeUpdated = item ;
             _db.Entry(toBeUpdated).CurrentValues.SetValues(item);
             await SaveAsync();
         }

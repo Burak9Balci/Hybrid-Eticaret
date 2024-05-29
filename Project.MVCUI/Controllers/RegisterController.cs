@@ -44,7 +44,7 @@ namespace Project.MVCUI.Controllers
             if (await _iAppUser.AddUserAsync(app1))
             {
                 await _iAppUser.AddToRoleAsync(app1, await _appRole.FirstOrDefaultAsync(x => x.Name.Contains("Member")));
-                string body = $"http://localhost:5270/Home/ConfirmEmail?specId={actCode}&id={app1.Id} linkine týklayýnýz";
+                string body = $"http://localhost:5270/Register/ConfirmEmail?actCode={actCode}&id={app1.Id} linkine týklayýnýz";
                 EMailService.Send(appUser.Email,body:body);
                 return RedirectToAction("RedirectPanel");
             }

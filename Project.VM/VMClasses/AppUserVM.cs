@@ -13,7 +13,7 @@ namespace Project.VM.VMClasses
         public int ID { get; set; }
         [Required(ErrorMessage = "{0} zorunlu bir alandır")]
         public string Password { get; set; }
-        [Required(ErrorMessage = "{0} zorunlu bir alandır")]
+      
         public string UserName { get; set; }
         [EmailAddress(ErrorMessage ="Lutfen Email formatinda bir adress griniz")]
         public string Email { get; set; }

@@ -22,7 +22,7 @@ namespace Project.MVCUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(AppUserVM appUser)
         {
-            AppUser appUserDomain = await _iAppUser.FirstOrDefaultAsync(x => x.UserName == appUser.UserName);
+            AppUser appUserDomain = await _iAppUser.FirstOrDefaultAsync(x => x.Email == appUser.Email);
             if (await _iAppUser.CheckPasswordAsync(appUserDomain, appUser.Password) && appUserDomain.Status == DataStatus.Updated)
             {
                 IList<string> roles = await _iAppUser.GetRolesAsync(appUserDomain);
@@ -55,7 +55,7 @@ namespace Project.MVCUI.Controllers
         [HttpPost]
         public async Task<IActionResult> GetMail(AppUserVM appUser)
         {
-            if ( await _iAppUser.AnyAsync(x =>x.Email.Contains(appUser.Email)))
+            if (await _iAppUser.AnyAsync(x =>x.Email.Contains(appUser.Email)))
             {
                 AppUser appUserDomain = await _iAppUser.FirstOrDefaultAsync(x =>x.Email.Contains(appUser.Email));
                 string body = $"http://localhost:5270/SignIn/ResetPassword?id={appUserDomain.Id} linkine tıklayınız";
