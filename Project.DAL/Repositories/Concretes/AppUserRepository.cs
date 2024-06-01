@@ -13,10 +13,12 @@ namespace Project.DAL.Repositories.Concretes
     public class AppUserRepository : BaseRepository<AppUser>, IAppUserRepository
     {
         MyContext _db;
-        public AppUserRepository(MyContext db, UserManager<AppUser> userManager) : base(db)
+        IAppUserRepository _userRepository;
+        public AppUserRepository(MyContext db, UserManager<AppUser> userManager, IAppUserRepository userRepository ) : base(db)
         {
           
             _db = db;
+            _userRepository = userRepository;
             _uManger = userManager;
         }
       
@@ -43,14 +45,22 @@ namespace Project.DAL.Repositories.Concretes
 
         public async Task<bool> CheckPasswordAsync(AppUser appUser, string password)
         {
-            bool result = await _uManger.CheckPasswordAsync(appUser, password);
+           // bool result = await _userRepository.AnyAsync(x =>x.UserName.Contains(appUser.UserName) && x.PasswordHash.Contains(appUser.PasswordHash));
+            bool result = await _uManger.CheckPasswordAsync(appUser, password);;
             return result;
           
         }
 
         public async Task<IList<string>> GetRolesAsync(AppUser appUser)
         {
-            IList<string> roles = await _uManger.GetRolesAsync(appUser);
+            List<string> roles = new List<string>();
+            foreach (AppUserRole item in appUser.UserRoles)
+            {
+                string role = item.Role.Name;
+                roles.Add(role);
+
+            }
+            //IList<string> roles = await _uManger.GetRolesAsync(appUser);
             return roles;
         }
     }

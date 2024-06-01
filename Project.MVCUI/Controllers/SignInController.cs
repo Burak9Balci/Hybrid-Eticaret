@@ -22,26 +22,29 @@ namespace Project.MVCUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(AppUserVM appUser)
         {
-            AppUser appUserDomain = await _iAppUser.FirstOrDefaultAsync(x => x.Email == appUser.Email);
-            if (await _iAppUser.CheckPasswordAsync(appUserDomain, appUser.Password) && appUserDomain.Status == DataStatus.Updated)
+            if (ModelState.IsValid)
             {
-                IList<string> roles = await _iAppUser.GetRolesAsync(appUserDomain);
-                if (roles.Contains("Admin"))
+                AppUser appUserDomain = await _iAppUser.FirstOrDefaultAsync(x => x.Email == appUser.Email);
+                if (await _iAppUser.CheckPasswordAsync(appUserDomain, appUser.PasswordHash) && appUserDomain.Status == DataStatus.Updated)
                 {
-                    return RedirectToAction("ListCategories", "Category", new { Area = "Admin" });
+                    IList<string> roles = await _iAppUser.GetRolesAsync(appUserDomain);
+                    if (roles.Contains("Admin"))
+                    {
+                        return RedirectToAction("ListCategories", "Category", new { Area = "Admin" });
+                    }
+                    else if (roles.Contains("Member"))
+                    {
+                        return RedirectToAction("Privacy", "SignIn");
+                    }
                 }
-                else if (roles.Contains("Member"))
+                else if (await _iAppUser.CheckPasswordAsync(appUserDomain, appUser.PasswordHash) && appUserDomain.Status != DataStatus.Updated)
                 {
-                    return RedirectToAction("Privacy", "SignIn");
+                    TempData["Message"] = "Lütfen Mailinizi onaylayın";
+                    return View();
                 }
+                TempData["Message"] = "Boyle bir üyelik yok";
             }
-            else if (await _iAppUser.CheckPasswordAsync(appUserDomain, appUser.Password) && appUserDomain.Status != DataStatus.Updated)
-            {
-                TempData["Message"] = "Lütfen Mailinizi onaylayın";
-                return View();
-            }
-            TempData["Message"] = "Boyle bir üyelik yok";
-            return View();
+            return View(appUser);
         }
         [Authorize(Roles = "Member")]
         public IActionResult Privacy()
@@ -73,7 +76,7 @@ namespace Project.MVCUI.Controllers
         public async Task<IActionResult> ResetPassword(AppUserVM appUser)
         {
             AppUser appUserDomain = await _iAppUser.FindAsync(appUser.ID);
-            appUserDomain.PasswordHash = appUser.Password;
+            appUserDomain.PasswordHash = appUser.PasswordHash;
             await _iAppUser.UpdateAsync(appUserDomain);
             return RedirectToAction("Login");
         }

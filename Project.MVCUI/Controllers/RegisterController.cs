@@ -38,7 +38,7 @@ namespace Project.MVCUI.Controllers
                UserName = appUser.UserName,
                Email = appUser.Email,
                ActivationCode = actCode,
-               PasswordHash = appUser.Password,
+               PasswordHash = appUser.PasswordHash,
                Agree = appUser.Agree,
             };
             if (await _iAppUser.AddUserAsync(app1))
