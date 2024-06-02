@@ -13,12 +13,11 @@ namespace Project.DAL.Repositories.Concretes
     public class AppUserRepository : BaseRepository<AppUser>, IAppUserRepository
     {
         MyContext _db;
-        IAppUserRepository _userRepository;
-        public AppUserRepository(MyContext db, UserManager<AppUser> userManager, IAppUserRepository userRepository ) : base(db)
+        public AppUserRepository(MyContext db, UserManager<AppUser> userManager ) : base(db)
         {
           
             _db = db;
-            _userRepository = userRepository;
+           
             _uManger = userManager;
         }
       

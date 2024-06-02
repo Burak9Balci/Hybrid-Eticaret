@@ -2,50 +2,81 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Login</title>
+<head>
+    <title>Login</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
             $("#registerForm").submit(function (event) {
+                var isValid = true;
+                var email = $("#mail").val().trim();
+                var passwordHash = $("#passwordHash").val().trim();
+                var userName = $("#userName").val().trim();
+                var agree = $("#check1").is(":checked");
 
+                if (email === "") {
+                    $("#emailError").text("Email alanı boş bırakılamaz.").show();
+                    isValid = false;
+                } else {
+                    $("#emailError").hide();
+                }
+
+                if (passwordHash === "") {
+                    $("#passwordError").text("Şifrenizi giriniz").show();
+                    isValid = false;
+                } else {
+                    $("#passwordError").hide();
+                }
+
+                if (userName === "") {
+                    $("#userNameError").text("Kullanıcı Adınızı Giriniz").show();
+                    isValid = false;
+                } else {
+                    $("#userNameError").hide();
+                }
+
+                if (!agree) {
+                    $("#checkboxError").text("Anlaşmayı Kabul edin yada üye olmayın").show();
+                    isValid = false;
+                } else {
+                    $("#checkboxError").hide();
+                }
+
+                if (!isValid) {
+                    event.preventDefault();
+                }
             });
         });
     </script>
-    </head>
-    <body>
-    <form asp-action="Register" asp-controller="Register" method="post" class="form-control" itemid="registerForm">
+</head>
+<body>
+    <form asp-action="Register" asp-controller="Register" method="post" class="form-control" id="registerForm">
         <div>
-            <label> Email </label>
-            <input asp-for="Email" class="form-control" id="Email"/>
+            <label>Email</label>
+            <input asp-for="Email" class="form-control" id="mail" />
             <span id="emailError" style="color: red; display: none;"></span>
         </div>
         <br />
         <div>
-            <label> UserName </label>
-            <input asp-for="UserName" class="form-control" itemid="UserName"/>
+            <label>UserName</label>
+            <input asp-for="UserName" class="form-control" id="userName" />
             <span id="userNameError" style="color: red; display: none;"></span>
-
         </div>
         <br />
         <div>
-            <label> Password</label>
-            <input type="password" asp-for="PasswordHash" class="form-control" itemid="PasswordHash" />
+            <label>Password</label>
+            <input type="password" asp-for="PasswordHash" class="form-control" id="passwordHash" />
             <span id="passwordError" style="color: red; display: none;"></span>
         </div>
-
         <div><a asp-action="Deal" class="">Anlaşma Kuralları</a></div>
         <div>
-            <input type="checkbox" asp-for="Agree" itemid="check1" /> Anlaşmayı Kabul et
+            <input type="checkbox" asp-for="Agree" id="check1" /> Anlaşmayı Kabul et
             <span id="checkboxError" style="color: red; display: none;"></span>
-
         </div>
-
         <br />
         <div>
-            <button class="btn btn-primary">Uye ol</button>
+            <button type="submit" class="btn btn-primary">Üye ol</button>
         </div>
     </form>
-    </body>
+</body>
 </html>
-

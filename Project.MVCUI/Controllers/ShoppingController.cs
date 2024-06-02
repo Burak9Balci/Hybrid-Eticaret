@@ -31,39 +31,15 @@ namespace Project.MVCUI.Controllers
             };
             return View(shopping);
         }
-        private List<ProductVM> ActiveProducts()
+        public IActionResult CartPage()
         {
-            List<ProductVM> products = _pManager.Select(x => new ProductVM
+            if (GetCartFromSession("scart") == null)
             {
-                ID = x.ID,
-                ProductName = x.ProductName,
-                UnitPrice = x.UnitPrice,
-                ImagePath = x.ImagePath
-                
-            }).Where(x =>x.Status != ENTITIES.Enums.DataStatus.Deleted).ToList();
-            return products;
-        }
-        private async Task<ICollection<CategoryVM>> ListCategories()
-        {
-            ICollection<CategoryVM> categories = await _cManager.Select(x => new CategoryVM
-            {
-                ID = x.ID,
-                CategoryName = x.CategoryName
-
-            }).ToListAsync();
-            return categories;
-        }
-        Cart GetCartFromSession(string key)
-        {
-            return HttpContext.Session.GetObject<Cart>(key);  
-        }
-        void SetCartToSession(Cart c)
-        {
-            HttpContext.Session.SetObject("scart",c);
-        }
-        void ControlCart(Cart c)
-        {
-            if (c.CartItems.Count == 0) HttpContext.Session.Remove("scart");
+                TempData["Message"] = "Sepetiniz boş";
+                return RedirectToAction("Index");
+            }
+            Cart c = GetCartFromSession("scart");
+            return View(c);
         }
         public async Task<IActionResult> AddToCart(int id)
         {
@@ -95,16 +71,6 @@ namespace Project.MVCUI.Controllers
             }
             return RedirectToAction("CartPage");
         }
-        public IActionResult CartPage()
-        {
-            if (GetCartFromSession("scart") == null)
-            {
-                TempData["Message"] = "Sepetiniz boş";
-                return RedirectToAction("Index");
-            }
-            Cart c = GetCartFromSession("scart");
-            return View(c);
-        }
         public IActionResult DeleteCart(int id)
         {
             if (GetCartFromSession("scart") != null)
@@ -116,6 +82,40 @@ namespace Project.MVCUI.Controllers
 
             }
             return RedirectToAction("CartPage");
+        }
+        List<ProductVM> ActiveProducts()
+        {
+            List<ProductVM> products = _pManager.Select(x => new ProductVM
+            {
+                ID = x.ID,
+                ProductName = x.ProductName,
+                UnitPrice = x.UnitPrice,
+                ImagePath = x.ImagePath
+
+            }).Where(x => x.Status != ENTITIES.Enums.DataStatus.Deleted).ToList();
+            return products;
+        }
+        async Task<ICollection<CategoryVM>> ListCategories()
+        {
+            ICollection<CategoryVM> categories = await _cManager.Select(x => new CategoryVM
+            {
+                ID = x.ID,
+                CategoryName = x.CategoryName
+
+            }).ToListAsync();
+            return categories;
+        }
+        Cart GetCartFromSession(string key)
+        {
+            return HttpContext.Session.GetObject<Cart>(key);
+        }
+        void SetCartToSession(Cart c)
+        {
+            HttpContext.Session.SetObject("scart", c);
+        }
+        void ControlCart(Cart c)
+        {
+            if (c.CartItems.Count == 0) HttpContext.Session.Remove("scart");
         }
     }
 }

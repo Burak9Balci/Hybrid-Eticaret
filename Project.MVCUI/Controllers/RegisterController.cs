@@ -32,23 +32,26 @@ namespace Project.MVCUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(AppUserVM appUser)
         {
-            Guid actCode = Guid.NewGuid();  
-            AppUser app1 = new()
+            if (ModelState.IsValid)
             {
-               UserName = appUser.UserName,
-               Email = appUser.Email,
-               ActivationCode = actCode,
-               PasswordHash = appUser.PasswordHash,
-               Agree = appUser.Agree,
-            };
-            if (await _iAppUser.AddUserAsync(app1))
-            {
-                await _iAppUser.AddToRoleAsync(app1, await _appRole.FirstOrDefaultAsync(x => x.Name.Contains("Member")));
-                string body = $"http://localhost:5270/Register/ConfirmEmail?actCode={actCode}&id={app1.Id} linkine týklayýnýz";
-                EMailService.Send(appUser.Email,body:body);
-                return RedirectToAction("RedirectPanel");
+                Guid actCode = Guid.NewGuid();
+                AppUser app1 = new()
+                {
+                    UserName = appUser.UserName,
+                    Email = appUser.Email,
+                    ActivationCode = actCode,
+                    PasswordHash = appUser.PasswordHash,
+                    Agree = appUser.Agree,
+                };
+                if (await _iAppUser.AddUserAsync(app1))
+                {
+                    await _iAppUser.AddToRoleAsync(app1, await _appRole.FirstOrDefaultAsync(x => x.Name.Contains("Member")));
+                    string body = $"http://localhost:5270/Register/ConfirmEmail?actCode={actCode}&id={app1.Id} linkine týklayýnýz";
+                    EMailService.Send(appUser.Email, body: body);
+                    return RedirectToAction("RedirectPanel");
+                }
             }
-            return View(app1);
+            return View(appUser);
         }       
         public async Task<IActionResult> ConfirmEmail(Guid actCode, int id)
         {

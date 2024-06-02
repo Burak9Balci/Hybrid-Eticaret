@@ -11,14 +11,14 @@ namespace Project.VM.VMClasses
     public class AppUserVM
     {
         public int ID { get; set; }
-        [Required(ErrorMessage = "{0} zorunlu bir alandır")]
+  
         public string PasswordHash { get; set; }
-        [Required(ErrorMessage = "{0} zorunlu bir alandır")]
+      
         public string UserName { get; set; }
         [EmailAddress(ErrorMessage ="Lutfen Email formatinda bir adress griniz")]
-        [Required(ErrorMessage = "{0} zorunlu bir alandır")]
+     
         public string Email { get; set; }
-        [Required(ErrorMessage = "{0} zorunlu bir alandır")]
+    
         public bool Agree { get; set; }
         public DataStatus Status { get; set; }
     }
